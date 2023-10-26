@@ -1,0 +1,23 @@
+void ReadDataFromBlock(int blockNumber, byte* data) {
+  // Assuming you have a variable 'cont_t' that holds the card's UID
+  String uid = cont_t.substring(1);  // Get UID substring starting from index 1
+
+  if (uid == "D3 C4 28 AA")// Your code for handling this UID
+ {
+  Serial.println("Authorized access");
+    Serial.println();
+    delay(500);
+
+      }
+       else if (uid == "3A 26 0B B0")// Your code for handling this UID
+ {
+ Serial.println("Authorized access");
+    Serial.println();
+    delay(500);
+      }
+      else{
+       Serial.println(" Access denied");
+        tone(BUZZER, 300);
+        delay(1000);
+        }
+}
